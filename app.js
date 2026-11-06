@@ -31,7 +31,7 @@ const sayBtn = t => `<button class="say" title="Uitspreken" data-say="${esc(t)}"
 document.addEventListener("click", e => { const b = e.target.closest("[data-say]"); if (b) say(b.dataset.say); });
 
 // ---------- navigatie ----------
-const tabs = { start, lessen, wins, gram, oefen, woorden };
+const tabs = { start, lessen, wins, gram, klein, oefen, woorden };
 function go(tab, arg) {
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
   tabs[tab](arg); window.scrollTo(0, 0);
@@ -52,7 +52,8 @@ function start() {
   <div class="card"><h3>De route</h3>
   <ol><li><b>Easy wins</b> — 7 klankregels die van je Spaans/Portugees direct Papiamentu maken.</li>
   <li><b>Grammatica</b> — 10 korte hoofdstukken. Kost een avond; het systeem is extreem regelmatig.</li>
-  <li><b>Lessen</b> — 8 niveaus × 5 zinnen + 10 woorden, met uitspraak en voorbeeldzinnen.</li>
+  <li><b>Lessen</b> — ${LEVELS.length} niveaus × 5 zinnen + 10 woorden, met uitspraak en voorbeeldzinnen.</li>
+  <li><b>Signaalwoorden</b> — voorzetsels, voegwoorden en kleine woorden die je zinnen aan elkaar knopen.</li>
   <li><b>Oefenen</b> — toets per niveau, tijdpartikels en valse vrienden. 10/10 = 🇨🇼 beloning.</li></ol></div>
   <div class="card muted">De spelling volgt Curaçao (Papiamentu, fonetisch). Op Aruba schrijft men Papiamento met Spaanse spelling (<i>cas</i> i.p.v. <i>kas</i>). De 🔊-knop gebruikt een Spaanse stem als benadering; vertrouw op de uitspraakregel eronder (HOOFDLETTERS = klemtoon).</div>`;
 }
@@ -101,6 +102,17 @@ function gram() {
   ${GRAMMAR.map((g, i) => `<details class="card" ${i === 0 ? "open" : ""}><summary>${g.title}</summary>${g.html}</details>`).join("")}`;
 }
 
+function klein() {
+  view.innerHTML = `<h2>Signaalwoorden & kleine woorden</h2>
+  <p class="muted">Deze woorden lijm je tussen alles wat je al kent. Bijna allemaal herkenbaar uit ES/PT, een paar uit het Nederlands.</p>
+  ${SMALL_WORDS.map((c, i) => `<details class="card" ${i === 0 ? "open" : ""}><summary>${c.cat} <span class="muted">(${c.items.length})</span></summary>
+    ${c.intro ? `<p class="tip">${c.intro}</p>` : ""}
+    ${c.items.map(w => `<div class="sw"><div class="row"><div><b class="pap" style="font-size:1.05rem">${esc(w.p)}</b> — ${esc(w.nl)} ${w.rel && w.rel !== "—" ? `<span class="rel">${esc(w.rel)}</span>` : ""}
+      <div class="ex">${esc(w.ex)} ${sayBtnInline(w.ex)}<br><i>${esc(w.exNl)}</i></div></div>${sayBtn(w.p)}</div></div>`).join("")}
+  </details>`).join("")}
+  <button class="btn" onclick="smallQuiz()">Oefen de signaalwoorden</button>`;
+}
+
 function woorden() {
   const all = allItems();
   view.innerHTML = `<h2>Woordenlijst</h2><input type="search" id="q" placeholder="Zoek in Papiamentu, Nederlands, Spaans of Portugees…"><div id="list"></div>`;
@@ -111,7 +123,8 @@ function woorden() {
   };
   $("#q").addEventListener("input", e => render(e.target.value)); render("");
 }
-const allItems = () => LEVELS.flatMap(l => [...l.words, ...l.phrases]);
+const smallItems = () => SMALL_WORDS.flatMap(c => c.items);
+const allItems = () => [...LEVELS.flatMap(l => [...l.words, ...l.phrases]), ...smallItems()];
 
 // ---------- quiz ----------
 const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
@@ -122,6 +135,8 @@ function oefen() {
   ${LEVELS.map(l => `<button class="btn alt" onclick="levelQuiz('${l.id}')">${l.name}</button>`).join("")}</div>
   <div class="card"><b>Mix: alle woorden</b><div class="muted">15 willekeurige vragen uit alle niveaus.</div>
   <button class="btn" onclick="mixQuiz()">Start</button></div>
+  <div class="card"><b>Signaalwoorden & voorzetsels</b><div class="muted">15 vragen over de kleine woorden.</div>
+  <button class="btn" onclick="smallQuiz()">Start</button></div>
   <div class="card"><b>Tijdpartikels: ta · a · tabata · lo</b><div class="muted">Kies het juiste partikel.</div>
   <button class="btn" onclick="tenseQuiz()">Start</button></div>
   <div class="card"><b>Valse vrienden</b><div class="muted">Trap je erin?</div>
@@ -143,6 +158,7 @@ function levelQuiz(id) {
     if (score > (progress[id] || 0)) { progress[id] = score; store.set(progress); }
   });
 }
+function smallQuiz() { const a = smallItems(); runQuiz("Signaalwoorden", vocabQs(a, a, 15)); }
 function mixQuiz() { const a = allItems(); runQuiz("Mix", vocabQs(a, a, 15)); }
 function tenseQuiz() {
   runQuiz("Tijdpartikels", shuffle(TENSE_QUIZ).map(t => ({

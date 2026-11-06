@@ -302,3 +302,242 @@ const TENSE_QUIZ = [
   { q: "Mi no ___ mira e pelíkula.", a: "a", nl: "Ik heb de film niet gezien." },
   { q: "Kiko bo ___ hasi awor?", a: "ta", nl: "Wat doe je nu?" }
 ];
+
+// ===================== UPDATE 2: extra niveaus =====================
+LEVELS.push(
+  {
+    id: "m4", name: "Basis 4", title: "Huis & dagelijks leven",
+    phrases: [
+      { p: "Drenta, por fabor.", nl: "Kom binnen, alsjeblieft.", u: "DREN-ta por fa-BOR", rel: "ES/PT entrar" },
+      { p: "Habri e porta, por fabor.", nl: "Doe de deur open, alsjeblieft.", u: "HA-brie e POR-ta", rel: "ES abrir · PT porta" },
+      { p: "Sera e bentana.", nl: "Doe het raam dicht.", u: "SE-ra e ben-TA-na", rel: "ES cerrar · ventana" },
+      { p: "Mi ta bai drumi.", nl: "Ik ga slapen.", u: "mie ta BAI DROE-mie", rel: "ta bai + ww = gaan" },
+      { p: "Mi mester laba paña.", nl: "Ik moet de was doen.", u: "mie mes-TER LA-ba PA-nja", rel: "ES lavar · paño" }
+    ],
+    words: [
+      { p: "kas", nl: "huis", u: "kas", rel: "ES/PT casa", ex: "Mi ta na kas.", exNl: "Ik ben thuis." },
+      { p: "kamber", nl: "kamer", u: "KAM-ber", rel: "NL kamer", ex: "Mi kamber ta chikitu.", exNl: "Mijn kamer is klein." },
+      { p: "kushina", nl: "keuken", u: "koe-SJIE-na", rel: "ES cocina · PT cozinha", ex: "E ta den kushina.", exNl: "Hij/zij is in de keuken." },
+      { p: "porta", nl: "deur", u: "POR-ta", rel: "PT porta · ES puerta", ex: "Sera e porta.", exNl: "Doe de deur dicht." },
+      { p: "bentana", nl: "raam", u: "ben-TA-na", rel: "ES ventana", ex: "Habri e bentana.", exNl: "Doe het raam open." },
+      { p: "mesa", nl: "tafel", u: "ME-sa", rel: "ES/PT mesa", ex: "E kuminda ta riba mesa.", exNl: "Het eten staat op tafel." },
+      { p: "stul", nl: "stoel", u: "stoel", rel: "NL stoel", ex: "Sinta riba e stul.", exNl: "Ga op de stoel zitten." },
+      { p: "kama", nl: "bed", u: "KA-ma", rel: "ES/PT cama", ex: "Mi ta bai kama.", exNl: "Ik ga naar bed." },
+      { p: "yabi", nl: "sleutel", u: "JA-bie", rel: "ES llave · PT chave", ex: "Unda mi yabi ta?", exNl: "Waar is mijn sleutel?" },
+      { p: "sinta", nl: "zitten / gaan zitten", u: "SIEN-ta", rel: "ES sentarse · PT sentar", ex: "Sinta, por fabor.", exNl: "Ga zitten, alsjeblieft." }
+    ]
+  },
+  {
+    id: "m5", name: "Basis 5", title: "Lichaam & dokter",
+    phrases: [
+      { p: "Mi tin doló di kabes.", nl: "Ik heb hoofdpijn.", u: "mie tien do-LO die KA-bes", rel: "ES dolor de cabeza" },
+      { p: "Mi ta malu.", nl: "Ik ben ziek.", u: "mie ta MA-loe", rel: "ES/PT malo/mau" },
+      { p: "Unda tin un bòtika?", nl: "Waar is een apotheek?", u: "OEN-da tien oen BÒ-tie-ka", rel: "ES botica" },
+      { p: "Yama un dòktor!", nl: "Bel een dokter!", u: "JA-ma oen DÒK-tor", rel: "ES llamar" },
+      { p: "Mi ta sinti mi mihó.", nl: "Ik voel me beter.", u: "mie ta SIEN-tie mie mie-HO", rel: "ES sentirse mejor" }
+    ],
+    words: [
+      { p: "kabes", nl: "hoofd", u: "KA-bes", rel: "ES cabeza · PT cabeça", ex: "Mi kabes ta hasi doló.", exNl: "Mijn hoofd doet pijn." },
+      { p: "wowo", nl: "oog / ogen", u: "WO-wo", rel: "PT olho (ver)", ex: "E tin wowo blou.", exNl: "Hij/zij heeft blauwe ogen." },
+      { p: "boka", nl: "mond", u: "BO-ka", rel: "ES/PT boca", ex: "Habri bo boka.", exNl: "Doe je mond open." },
+      { p: "man", nl: "hand / arm", u: "man", rel: "PT mão · ES mano", ex: "Laba bo man.", exNl: "Was je handen." },
+      { p: "pia", nl: "voet / been", u: "PIE-a", rel: "ES pie · PT pé", ex: "Mi pia ta kansá.", exNl: "Mijn voeten zijn moe." },
+      { p: "kurason", nl: "hart", u: "koe-ra-SON", rel: "ES corazón", ex: "Ku tur mi kurason.", exNl: "Met heel mijn hart." },
+      { p: "barika", nl: "buik", u: "ba-RIE-ka", rel: "ES/PT barriga", ex: "Mi barika ta yen.", exNl: "Mijn buik zit vol." },
+      { p: "doló", nl: "pijn", u: "do-LO", rel: "ES dolor", ex: "Mi tin doló.", exNl: "Ik heb pijn." },
+      { p: "remedi", nl: "medicijn", u: "re-ME-die", rel: "ES remedio", ex: "Bebe e remedi.", exNl: "Neem het medicijn in." },
+      { p: "dòktor", nl: "dokter", u: "DÒK-tor", rel: "NL dokter", ex: "Mi mester bai dòktor.", exNl: "Ik moet naar de dokter." }
+    ]
+  },
+  {
+    id: "m6", name: "Basis 6", title: "Winkelen & geld",
+    phrases: [
+      { p: "Kuantu esaki ta kosta?", nl: "Hoeveel kost dit?", u: "KWAN-toe e-SA-kie ta KOS-ta", rel: "esaki = ES esto (aquí)" },
+      { p: "E ta muchu karu.", nl: "Het is te duur.", u: "e ta MOE-tjoe KA-roe", rel: "muchu = té · ES caro" },
+      { p: "Mi ta wak so.", nl: "Ik kijk alleen even rond.", u: "mie ta WAK SO", rel: "so = alleen" },
+      { p: "Mi por paga ku karchi?", nl: "Kan ik met kaart betalen?", u: "mie por PA-ga koe KAR-tjie", rel: "ES pagar con…" },
+      { p: "Bo tin esaki mas grandi?", nl: "Heb je dit in een grotere maat?", u: "bo tien e-SA-kie mas GRAN-die", rel: "ES más grande" }
+    ],
+    words: [
+      { p: "plaka", nl: "geld", u: "PLA-ka", rel: "ES placa (munt)", ex: "Mi no tin plaka.", exNl: "Ik heb geen geld." },
+      { p: "karu", nl: "duur", u: "KA-roe", rel: "ES/PT caro", ex: "Kòrsou ta karu.", exNl: "Curaçao is duur." },
+      { p: "paga", nl: "betalen", u: "PA-ga", rel: "ES/PT pagar", ex: "Ken ta paga?", exNl: "Wie betaalt?" },
+      { p: "bende", nl: "verkopen", u: "BEN-de", rel: "ES/PT vender", ex: "Nan ta bende fruta.", exNl: "Ze verkopen fruit." },
+      { p: "tienda", nl: "winkel", u: "TJEN-da", rel: "ES tienda", ex: "E tienda ta será.", exNl: "De winkel is dicht." },
+      { p: "fruta", nl: "fruit", u: "FROE-ta", rel: "ES/PT fruta", ex: "Mi gusta fruta.", exNl: "Ik hou van fruit." },
+      { p: "paña", nl: "kleding", u: "PA-nja", rel: "ES paño (stof)", ex: "Mi ke kumpra paña.", exNl: "Ik wil kleren kopen." },
+      { p: "sapatu", nl: "schoen(en)", u: "sa-PA-toe", rel: "ES zapato · PT sapato", ex: "Mi sapatu ta nobo.", exNl: "Mijn schoenen zijn nieuw." },
+      { p: "grandi", nl: "groot", u: "GRAN-die", rel: "ES/PT grande", ex: "Un kas grandi.", exNl: "Een groot huis." },
+      { p: "chikitu", nl: "klein", u: "tjie-KIE-toe", rel: "ES chiquito", ex: "Un mucha chikitu.", exNl: "Een klein kind." }
+    ]
+  },
+  {
+    id: "g3", name: "Gevorderd 3", title: "Weer & natuur",
+    phrases: [
+      { p: "Ta hasi hopi kalor awe.", nl: "Het is heel warm vandaag.", u: "ta HA-sie HO-pie ka-LOR A-we", rel: "ES hace calor" },
+      { p: "Awa ta kai.", nl: "Het regent. (letterlijk: water valt)", u: "A-wa ta KAI", rel: "ES caer · PT cair" },
+      { p: "E solo ta kima.", nl: "De zon brandt.", u: "e SO-lo ta KIE-ma", rel: "ES sol · quemar" },
+      { p: "E laman ta trankil.", nl: "De zee is rustig.", u: "e la-MAN ta tran-KIEL", rel: "PT o mar" },
+      { p: "Tin hopi bientu.", nl: "Het waait hard.", u: "tien HO-pie BJEN-toe", rel: "ES viento" }
+    ],
+    words: [
+      { p: "solo", nl: "zon", u: "SO-lo", rel: "ES/PT sol", ex: "E solo ta bunita.", exNl: "De zon is mooi." },
+      { p: "awaseru", nl: "regen(bui)", u: "a-wa-SE-roe", rel: "ES aguacero", ex: "Tabatin un awaseru grandi.", exNl: "Er was een flinke regenbui." },
+      { p: "bientu", nl: "wind", u: "BJEN-toe", rel: "ES viento", ex: "E bientu ta fresku.", exNl: "De wind is fris." },
+      { p: "laman", nl: "zee", u: "la-MAN", rel: "PT o mar", ex: "Nos ta landa den laman.", exNl: "We zwemmen in zee." },
+      { p: "kalor", nl: "warmte / hitte", u: "ka-LOR", rel: "ES/PT calor", ex: "Mi tin kalor.", exNl: "Ik heb het warm." },
+      { p: "friu", nl: "koud", u: "FRIE-oe", rel: "ES frío · PT frio", ex: "E awa ta friu.", exNl: "Het water is koud." },
+      { p: "palu", nl: "boom", u: "PA-loe", rel: "PT pau · ES palo", ex: "Bou di e palu.", exNl: "Onder de boom." },
+      { p: "flor", nl: "bloem", u: "flor", rel: "ES/PT flor", ex: "Un flor bunita.", exNl: "Een mooie bloem." },
+      { p: "tera", nl: "land / aarde / grond", u: "TE-ra", rel: "ES tierra · PT terra", ex: "Mi tera ta Hulanda.", exNl: "Mijn land is Nederland." },
+      { p: "luna", nl: "maan / maand", u: "LOE-na", rel: "ES/PT luna/lua", ex: "Otro luna mi ta bini.", exNl: "Volgende maand kom ik." }
+    ]
+  },
+  {
+    id: "g4", name: "Gevorderd 4", title: "Werk & studie",
+    phrases: [
+      { p: "Ki trabou bo ta hasi?", nl: "Wat voor werk doe je?", u: "kie tra-BOU bo ta HA-sie", rel: "ES trabajo" },
+      { p: "Mi ta traha pa gobièrnu.", nl: "Ik werk voor de overheid.", u: "mie ta TRA-ha pa go-BJÈR-noe", rel: "ES gobierno" },
+      { p: "Mi tin un reunion awe.", nl: "Ik heb vandaag een vergadering.", u: "mie tien oen reu-NJON A-we", rel: "ES reunión" },
+      { p: "Mi ta bai skol.", nl: "Ik ga naar school.", u: "mie ta BAI skol", rel: "NL school" },
+      { p: "Mi ta sinja na universidat.", nl: "Ik studeer aan de universiteit.", u: "mie ta SIEN-ja na oe-nie-ver-sie-DAT", rel: "–dad → –dat" }
+    ],
+    words: [
+      { p: "trabou", nl: "werk (het werk)", u: "tra-BOU", rel: "ES trabajo", ex: "Mi trabou ta interesante.", exNl: "Mijn werk is interessant." },
+      { p: "ofisina", nl: "kantoor", u: "o-fie-SIE-na", rel: "ES oficina", ex: "Mi ta na ofisina.", exNl: "Ik ben op kantoor." },
+      { p: "skol", nl: "school", u: "skol", rel: "NL school", ex: "E muchanan ta na skol.", exNl: "De kinderen zijn op school." },
+      { p: "buki", nl: "boek", u: "BOE-kie", rel: "NL boek", ex: "Mi ta lesa un buki.", exNl: "Ik lees een boek." },
+      { p: "lesa", nl: "lezen", u: "LE-sa", rel: "NL lezen", ex: "Bo por lesa esaki?", exNl: "Kun je dit lezen?" },
+      { p: "skirbi", nl: "schrijven", u: "SKIER-bie", rel: "ES escribir", ex: "Skirbi bo nòmber.", exNl: "Schrijf je naam." },
+      { p: "maestro", nl: "leraar / lerares", u: "ma-ES-tro", rel: "ES maestro", ex: "E maestro ta bon.", exNl: "De leraar is goed." },
+      { p: "tempu", nl: "tijd", u: "TEM-poe", rel: "PT tempo · ES tiempo", ex: "Mi no tin tempu.", exNl: "Ik heb geen tijd." },
+      { p: "siman", nl: "week", u: "sie-MAN", rel: "ES semana", ex: "Otro siman.", exNl: "Volgende week." },
+      { p: "aña", nl: "jaar", u: "A-nja", rel: "ES año", ex: "Aña nobo.", exNl: "Nieuwjaar." }
+    ]
+  },
+  {
+    id: "g5", name: "Gevorderd 5", title: "Uitgaan & feest",
+    phrases: [
+      { p: "Ban bai!", nl: "Kom, we gaan!", u: "BAN BAI", rel: "ban = laten we (ES vamos)" },
+      { p: "Ban baila!", nl: "Laten we dansen!", u: "ban BAI-la", rel: "ES bailar" },
+      { p: "Salú!", nl: "Proost! / Gezondheid!", u: "sa-LOE", rel: "ES salud" },
+      { p: "E fiesta tabata dushi.", nl: "Het feest was leuk.", u: "e FJES-ta ta-BA-ta DOE-sjie", rel: "ES fiesta" },
+      { p: "Bo tin plan pa awe nochi?", nl: "Heb je plannen voor vanavond?", u: "bo tien plan pa A-we NO-tjie", rel: "awe nochi = vanavond" }
+    ],
+    words: [
+      { p: "fiesta", nl: "feest", u: "FJES-ta", rel: "ES fiesta", ex: "Tin un fiesta awe.", exNl: "Er is vandaag een feest." },
+      { p: "baila", nl: "dansen", u: "BAI-la", rel: "ES/PT bailar", ex: "Bo sa baila?", exNl: "Kun je dansen?" },
+      { p: "kanta", nl: "zingen", u: "KAN-ta", rel: "ES/PT cantar", ex: "E ta kanta bunita.", exNl: "Hij/zij zingt mooi." },
+      { p: "muzik", nl: "muziek", u: "moe-ZIEK", rel: "NL muziek", ex: "E muzik ta duru.", exNl: "De muziek is hard." },
+      { p: "serbes", nl: "bier", u: "SER-bes", rel: "ES cerveza · PT cerveja", ex: "Dos serbes, por fabor.", exNl: "Twee bier, alsjeblieft." },
+      { p: "biña", nl: "wijn", u: "BIE-nja", rel: "PT vinho · ES vino", ex: "Un glas di biña.", exNl: "Een glas wijn." },
+      { p: "karnaval", nl: "carnaval", u: "kar-na-VAL", rel: "ES/PT carnaval", ex: "Karnaval ta den febrüari.", exNl: "Carnaval is in februari." },
+      { p: "sali", nl: "uitgaan / weggaan", u: "SA-lie", rel: "ES salir · PT sair", ex: "Nos ta sali awe nochi.", exNl: "We gaan vanavond uit." },
+      { p: "hunga", nl: "spelen", u: "HOEN-ga", rel: "ES jugar (j → h)", ex: "Ban hunga domino.", exNl: "Laten we domino spelen." },
+      { p: "kumpleaño", nl: "verjaardag", u: "koem-ple-A-njo", rel: "ES cumpleaños", ex: "Felis kumpleaño!", exNl: "Gefeliciteerd!" }
+    ]
+  },
+  {
+    id: "g6", name: "Gevorderd 6", title: "Mening & discussie",
+    phrases: [
+      { p: "Mi ta pensa ku bo tin rason.", nl: "Ik denk dat je gelijk hebt.", u: "mie ta PEN-sa koe bo tien ra-SON", rel: "ku = dat · ES tener razón" },
+      { p: "Mi ta di akuerdo.", nl: "Ik ben het ermee eens.", u: "mie ta die a-KWER-do", rel: "ES de acuerdo" },
+      { p: "Mi no ta di akuerdo.", nl: "Ik ben het er niet mee eens.", u: "mie no ta die a-KWER-do", rel: "no vóór ta" },
+      { p: "Depende.", nl: "Het hangt ervan af.", u: "de-PEN-de", rel: "ES depende" },
+      { p: "Ta bèrdat, pero…", nl: "Dat klopt, maar…", u: "ta bèr-DAT PE-ro", rel: "ES es verdad, pero" }
+    ],
+    words: [
+      { p: "pensa", nl: "denken", u: "PEN-sa", rel: "ES/PT pensar", ex: "Kiko bo ta pensa?", exNl: "Wat denk jij?" },
+      { p: "opinion", nl: "mening", u: "o-pie-NJON", rel: "ES opinión", ex: "Kiko ta bo opinion?", exNl: "Wat is jouw mening?" },
+      { p: "rason", nl: "reden / gelijk", u: "ra-SON", rel: "ES razón", ex: "Bo tin rason.", exNl: "Je hebt gelijk." },
+      { p: "manera", nl: "manier", u: "ma-NE-ra", rel: "ES/PT manera", ex: "Di e manera aki.", exNl: "Op deze manier." },
+      { p: "problema", nl: "probleem", u: "pro-BLE-ma", rel: "ES/PT problema", ex: "No tin problema.", exNl: "Geen probleem." },
+      { p: "solushon", nl: "oplossing", u: "so-loe-SJON", rel: "–ción → –shon", ex: "Nos mester un solushon.", exNl: "We hebben een oplossing nodig." },
+      { p: "importante", nl: "belangrijk", u: "iem-por-TAN-te", rel: "ES/PT importante", ex: "Esaki ta importante.", exNl: "Dit is belangrijk." },
+      { p: "fásil", nl: "makkelijk", u: "FA-siel", rel: "ES fácil", ex: "Papiamentu ta fásil!", exNl: "Papiamentu is makkelijk!" },
+      { p: "difísil", nl: "moeilijk", u: "die-FIE-siel", rel: "ES difícil", ex: "E no ta difísil.", exNl: "Het is niet moeilijk." },
+      { p: "konfia", nl: "vertrouwen", u: "kon-FIE-a", rel: "ES confiar", ex: "Mi ta konfia bo.", exNl: "Ik vertrouw je." }
+    ]
+  }
+);
+
+// ===================== UPDATE 2: signaalwoorden & kleine woorden =====================
+const SMALL_WORDS = [
+  { cat: "Voorzetsels: waar?", intro: "Veel plaatsvoorzetsels zijn <b>X di</b>: banda di, dilanti di, patras di… vergelijk ES <i>delante de</i>, <i>detrás de</i>.", items: [
+    { p: "na", nl: "in / op / naar / bij (plaats, algemeen)", rel: "PT na", ex: "Mi ta na kas. Mi ta bai na Punda.", exNl: "Ik ben thuis. Ik ga naar Punda." },
+    { p: "den", nl: "in (binnen iets)", rel: "≠ na: echt ín iets", ex: "E yabi ta den mi bòlsa.", exNl: "De sleutel zit in mijn tas." },
+    { p: "riba", nl: "op / boven", rel: "ES arriba", ex: "E buki ta riba mesa.", exNl: "Het boek ligt op tafel." },
+    { p: "bou (di)", nl: "onder", rel: "PT abaixo", ex: "E pushi ta bou di kama.", exNl: "De kat zit onder het bed." },
+    { p: "banda di", nl: "naast", rel: "ES al lado (banda = kant)", ex: "Sinta banda di mi.", exNl: "Kom naast me zitten." },
+    { p: "dilanti di", nl: "voor (plaats)", rel: "ES delante de", ex: "Dilanti di e kas.", exNl: "Voor het huis." },
+    { p: "patras di", nl: "achter", rel: "ES detrás de", ex: "Patras di e porta.", exNl: "Achter de deur." },
+    { p: "meimei di", nl: "tussen / midden in", rel: "PT meio", ex: "Meimei di e dos kasnan.", exNl: "Tussen de twee huizen." },
+    { p: "serka", nl: "dichtbij / bij (iemand)", rel: "ES/PT cerca", ex: "Mi ta keda serka mi ruman.", exNl: "Ik logeer bij mijn broer/zus." },
+    { p: "for di", nl: "uit / vanaf", rel: "PT fora de", ex: "Mi ta bini for di Amsterdam.", exNl: "Ik kom uit Amsterdam." }
+  ]},
+  { cat: "Voorzetsels: overige", intro: "", items: [
+    { p: "di", nl: "van", rel: "ES/PT de", ex: "E kas di Maria.", exNl: "Het huis van Maria." },
+    { p: "pa", nl: "voor / om te", rel: "ES para · PT pra", ex: "Esaki ta pa bo. Mi a bini pa sinja.", exNl: "Dit is voor jou. Ik kwam om te leren." },
+    { p: "ku", nl: "met", rel: "ES con · PT com", ex: "Kafe ku lechi.", exNl: "Koffie met melk." },
+    { p: "sin", nl: "zonder", rel: "ES sin · PT sem", ex: "Kafe sin suku.", exNl: "Koffie zonder suiker." },
+    { p: "te", nl: "tot", rel: "ES hasta · PT até", ex: "Te mañan!", exNl: "Tot morgen!" },
+    { p: "kontra", nl: "tegen", rel: "ES/PT contra", ex: "Mi ta kontra esei.", exNl: "Ik ben daartegen." },
+    { p: "tokante", nl: "over / betreffende", rel: "ES tocante a", ex: "Nos a papia tokante bo.", exNl: "We hebben over jou gepraat." },
+    { p: "pa motibu di", nl: "vanwege", rel: "ES por motivo de", ex: "Pa motibu di e awaseru.", exNl: "Vanwege de regenbui." }
+  ]},
+  { cat: "Signaalwoorden: opsomming & tegenstelling", intro: "Let op: <b>òf</b> en <b>tòg</b> komen uit het Nederlands!", items: [
+    { p: "i", nl: "en", rel: "ES y", ex: "Mi i bo.", exNl: "Ik en jij." },
+    { p: "òf", nl: "of", rel: "NL of", ex: "Kafe òf té?", exNl: "Koffie of thee?" },
+    { p: "tambe", nl: "ook", rel: "ES también · PT também", ex: "Mi tambe!", exNl: "Ik ook!" },
+    { p: "tampoko", nl: "ook niet", rel: "ES tampoco", ex: "Mi tampoko.", exNl: "Ik ook niet." },
+    { p: "ademas", nl: "bovendien", rel: "ES además", ex: "Ademas, e ta karu.", exNl: "Bovendien is het duur." },
+    { p: "pero", nl: "maar", rel: "ES/PT pero/porém", ex: "E ta bon, pero karu.", exNl: "Het is goed, maar duur." },
+    { p: "maske", nl: "hoewel / ook al", rel: "ES más que", ex: "Maske ta kai awa, mi ta bai.", exNl: "Ook al regent het, ik ga." },
+    { p: "tòg", nl: "toch", rel: "NL toch", ex: "Bo ta bini tòg?", exNl: "Je komt toch?" },
+    { p: "en bes di", nl: "in plaats van", rel: "ES en vez de", ex: "En bes di kafe, mi ke té.", exNl: "In plaats van koffie wil ik thee." },
+    { p: "por ehèmpel", nl: "bijvoorbeeld", rel: "ES por ejemplo", ex: "Fruta, por ehèmpel mango.", exNl: "Fruit, bijvoorbeeld mango." }
+  ]},
+  { cat: "Signaalwoorden: oorzaak, gevolg & voorwaarde", intro: "<b>ku</b> = 'dat' als voegwoord: <i>Mi sa ku e ta bini</i> — ik weet dat hij komt.", items: [
+    { p: "pasobra", nl: "omdat / want", rel: "—", ex: "Mi no ta bai, pasobra mi ta malu.", exNl: "Ik ga niet, want ik ben ziek." },
+    { p: "p'esei", nl: "daarom", rel: "ES por eso", ex: "P'esei mi ta sinja Papiamentu.", exNl: "Daarom leer ik Papiamentu." },
+    { p: "anto", nl: "dus / en toen / nou", rel: "PT então", ex: "Anto, kiko bo ta hasi?", exNl: "Nou, wat ga je doen?" },
+    { p: "si", nl: "als / indien", rel: "ES/PT si/se", ex: "Si bo ke, nos por bai.", exNl: "Als je wilt, kunnen we gaan." },
+    { p: "ku", nl: "dat (voegwoord)", rel: "ES que", ex: "Mi ta pensa ku e ta bon.", exNl: "Ik denk dat het goed is." },
+    { p: "pa", nl: "zodat / om", rel: "ES para que", ex: "Papia poko poko pa mi kompronde.", exNl: "Praat langzaam zodat ik het begrijp." },
+    { p: "asina", nl: "zo / op die manier", rel: "ES así", ex: "Ta asina e ta.", exNl: "Zo is het." },
+    { p: "meskos ku", nl: "net als / hetzelfde als", rel: "ES mismo", ex: "Meskos ku ayera.", exNl: "Net als gisteren." }
+  ]},
+  { cat: "Signaalwoorden: tijd & volgorde", intro: "", items: [
+    { p: "promé", nl: "eerst", rel: "ES primero", ex: "Promé nos ta kome.", exNl: "Eerst eten we." },
+    { p: "promé ku", nl: "voordat", rel: "ES primero que", ex: "Promé ku bo bai, yama mi.", exNl: "Bel me voordat je gaat." },
+    { p: "despues", nl: "daarna / later", rel: "ES después", ex: "Despues nos ta bai playa.", exNl: "Daarna gaan we naar het strand." },
+    { p: "ora", nl: "wanneer / toen", rel: "ES hora", ex: "Ora mi yega, yama mi.", exNl: "Bel me wanneer ik aankom." },
+    { p: "miéntras", nl: "terwijl", rel: "ES mientras", ex: "Miéntras mi ta kushiná, e ta lesa.", exNl: "Terwijl ik kook, leest hij." },
+    { p: "ainda", nl: "nog (steeds)", rel: "PT ainda", ex: "Mi ainda no a kome.", exNl: "Ik heb nog niet gegeten." },
+    { p: "kaba", nl: "al (achteraan de zin)", rel: "ES/PT acabar", ex: "Mi a kaba kaba.", exNl: "Ik ben al klaar." },
+    { p: "djis", nl: "net / zojuist / gewoon", rel: "EN just", ex: "E a djis sali.", exNl: "Hij is net weg." },
+    { p: "tin biaha", nl: "soms", rel: "ES (hay) veces", ex: "Tin biaha mi ta bai.", exNl: "Soms ga ik." },
+    { p: "hopi biaha", nl: "vaak", rel: "ES muchas veces", ex: "Mi ta bini aki hopi biaha.", exNl: "Ik kom hier vaak." },
+    { p: "pronto", nl: "binnenkort", rel: "ES/PT pronto", ex: "Te pronto!", exNl: "Tot snel!" },
+    { p: "finalmente", nl: "eindelijk / tot slot", rel: "ES/PT finalmente", ex: "Finalmente bo a yega!", exNl: "Eindelijk ben je er!" }
+  ]},
+  { cat: "Hoeveelheid & graad", intro: "<b>muchu</b> = té (te veel), <b>hopi</b> = veel/heel. Niet verwarren!", items: [
+    { p: "hopi", nl: "veel / heel", rel: "—", ex: "Hopi hende.", exNl: "Veel mensen." },
+    { p: "masha", nl: "erg / zeer", rel: "—", ex: "Masha bon!", exNl: "Erg goed!" },
+    { p: "muchu", nl: "te (te veel)", rel: "ES mucho (maar = té)", ex: "Muchu karu.", exNl: "Te duur." },
+    { p: "poko", nl: "weinig / een beetje", rel: "ES/PT poco/pouco", ex: "Un poko awa.", exNl: "Een beetje water." },
+    { p: "mas", nl: "meer / -er", rel: "ES/PT más/mais", ex: "Mas grandi.", exNl: "Groter." },
+    { p: "ménos", nl: "minder", rel: "ES menos", ex: "Ménos suku.", exNl: "Minder suiker." },
+    { p: "so", nl: "alleen / slechts", rel: "ES solo · PT só", ex: "So un.", exNl: "Maar één." },
+    { p: "kasi", nl: "bijna", rel: "ES casi", ex: "Mi ta kasi kla.", exNl: "Ik ben bijna klaar." },
+    { p: "basta", nl: "genoeg", rel: "ES/PT basta", ex: "Basta!", exNl: "Genoeg!" },
+    { p: "tur", nl: "alle / alles", rel: "PT tudo", ex: "Tur dia.", exNl: "Elke dag." }
+  ]},
+  { cat: "Aanwijzen: dit & dat", intro: "Easy win: <b>e … aki</b> = deze/dit, <b>e … ei</b> = die/dat. Het lidwoord blijft gewoon staan.", items: [
+    { p: "esaki", nl: "dit / deze (los)", rel: "ES esto + aquí", ex: "Esaki ta mi kas.", exNl: "Dit is mijn huis." },
+    { p: "esei", nl: "dat / die (los)", rel: "ES eso", ex: "Esei ta bon.", exNl: "Dat is goed." },
+    { p: "e … aki", nl: "deze / dit …", rel: "ES este … aquí", ex: "E kas aki.", exNl: "Dit huis." },
+    { p: "e … ei", nl: "die / dat …", rel: "ES ese … ahí", ex: "E outo ei.", exNl: "Die auto." },
+    { p: "e … aya", nl: "die / dat … (daarginds)", rel: "ES aquel … allá", ex: "E palu aya.", exNl: "Die boom daarginds." }
+  ]}
+];

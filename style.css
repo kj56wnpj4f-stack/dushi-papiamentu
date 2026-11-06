@@ -49,3 +49,4 @@ input[type=search]{width:100%;padding:10px 12px;border-radius:10px;border:1px so
 .celebrate h2{color:var(--blue2)}
 @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 .muted{color:var(--mute);font-size:.9rem}
+.sw{padding:10px 0;border-bottom:1px solid var(--line)}.sw:last-child{border-bottom:0}
